@@ -1,0 +1,160 @@
+/* Header wrapper */
+.site-header {
+    font-family: system-ui, sans-serif;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    position: relative;           
+  }
+  
+  
+  .topbar {
+    /* Make the bar span the viewport width and "break out" of any parent padding */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  
+    /* Layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    background: #1d1d1d;
+    color: #fff;
+    font-size: 14px;
+    padding: 6px clamp(12px, 4vw, 40px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-sizing: border-box;
+    z-index: 10;                  /* sits above page content if sticky later */
+  }
+  
+  
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .badge {
+    background: #ff5a5f;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  
+  .topbar-right {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .topbar-right .item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #ddd;
+  }
+  
+  .topbar-right i {
+    color: #ff5a5f;
+  }
+  
+  /* ========== MAINBAR ========== */
+  .mainbar {
+    display: flex;
+    justify-content: space-between;   /* left group vs socials */
+    align-items: center;
+    background: #fff;
+    padding-block: 14px;
+    /* respect your global body padding without re-adding here */
+  }
+  
+  /* Left group: logo + nav (left-aligned) */
+  .left {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.2vw, 28px);
+  }
+  
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .brand-logo {
+    display: block;
+    height: clamp(28px, 4vw, 42px);
+    width: auto;
+  }
+  
+  /* Nav sits next to logo */
+  .nav {
+    display: flex;
+    gap: clamp(18px, 2.4vw, 32px);
+  }
+  
+  .nav a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-block: 6px;
+  }
+  
+  .nav a.active,
+  .nav a:hover {
+    color: #000;
+  }
+  
+  .nav a.active::after,
+  .nav a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    border-radius: 1px;
+  }
+  
+  /* Socials (right side) */
+  .socials {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .socials a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #444;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .socials i {
+    color: #111;
+    font-size: 16px;
+  }
+  
+  .socials a:hover { color: #000; }
+  
+  /* Responsive: collapse gaps a bit */
+  @media (max-width: 900px) {
+    .nav { gap: 18px; }
+    .socials span { display: none; } /* icons only on small screens */
+  }
+  
+  @media (max-width: 680px) {
+    .nav { display: none; }          /* swap to burger here if you want */
+  }
+  
+  @supports (width: 100svw) {
+    .topbar {
+      width: 100svw;
+      margin-left: calc(50% - 50svw);
+      margin-right: calc(50% - 50svw);
+    }
+  }

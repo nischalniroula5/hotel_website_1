@@ -1,0 +1,15 @@
+/* Full-bleed app container */
+#root {
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  text-align: initial; /* don't center everything by default */
+}
+
+/* Useful global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

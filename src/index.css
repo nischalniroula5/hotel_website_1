@@ -1,0 +1,28 @@
+:root {
+  color-scheme: light;
+  color: #111;
+  background: #fff;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove the boxed/centered layout from Vite starter */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: block;      /* was: display:flex */
+  background: #fff;
+  padding-inline: clamp(12px, 2vw, 32px);  
+  color: #111;
+}
+
+/* Keep link/button basics minimal; you can style locally per component */
+a { color: inherit; text-decoration: none; }
+
+/* OPTIONAL: remove starter demo styles you don't use
+.logo, .card, .read-the-docs { all: unset; }
+*/
